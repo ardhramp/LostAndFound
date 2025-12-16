@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Report Item</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #dbeafe, #eff6ff);
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e3a8a;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .form-card {
+            background: #ffffff;
+            padding: 30px 35px;
+            width: 420px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        h2 {
+            text-align: center;
+            color: #1e40af;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: 600;
+            color: #1e40af;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 8px;
+            border: 1px solid #bfdbfe;
+            outline: none;
+            font-size: 14px;
+            margin-bottom: 14px;
+            transition: 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #60a5fa;
+            box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.25);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 70px;
+        }
+
+        button, input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background: #3b82f6;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover, input[type="submit"]:hover {
+            background: #2563eb;
+        }
+
+        .back {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .back a {
+            text-decoration: none;
+            color: #2563eb;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Report Lost or Found Item</h1>
+
+<div class="container">
+
+    <!-- LOST ITEM FORM -->
+    <div class="form-card">
+        <h2>Lost Item</h2>
+
+        <form action="AddLostItemServlet" method="post">
+            <label>Item Name</label>
+            <input type="text" name="itemName" required>
+
+            <label>Category</label>
+            <input type="text" name="category">
+
+            <label>Place Lost</label>
+            <input type="text" name="place">
+
+            <label>Date Lost</label>
+            <input type="date" name="dateLost">
+
+            <label>Contact Info</label>
+            <input type="text" name="contact" required>
+
+            <input type="submit" value="Submit Lost Item">
+        </form>
+    </div>
+
+    <!-- FOUND ITEM FORM -->
+    <div class="form-card">
+        <h2>Found Item</h2>
+
+        <form method="post" action="AddLostItemServlet">
+            <label>Item Name</label>
+            <input type="text" name="itemName" required>
+
+            <label>Description</label>
+            <textarea name="description"></textarea>
+
+            <label>Location Found</label>
+            <input type="text" name="location">
+
+            <label>Date Found</label>
+            <input type="date" name="dateFound">
+
+            <button type="submit">Submit Found Item</button>
+        </form>
+    </div>
+
+</div>
+
+<div class="back">
+    <a href="dashboard.jsp">← Back to Dashboard</a>
+</div>
+
+</body>
+</html>
