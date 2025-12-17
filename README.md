@@ -18,3 +18,22 @@ The Lost & Found Management System is a web-based application built using Java S
 - HTML / CSS
 - Oracle Database (via `ojdbc11.jar`)
 - Apache Tomcat or any Java EE compatible server
+- ---
+
+## How to Run / Implement Using Apache Tomcat
+
+### Prerequisites
+- JDK 8 or higher installed
+- Apache Tomcat 9 or 10
+- Oracle Database
+- `ojdbc11.jar` JDBC driver
+
+---
+
+### Step 1: Database Setup
+1. Create required tables in Oracle Database (Users, Items, Claims, etc.).
+2. Update database credentials in `DBConnection.java`:
+   ```java
+   String url = "jdbc:oracle:thin:@localhost:1521:xe";
+   String username = "your_db_username";
+   String password = "your_db_password";
