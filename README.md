@@ -27,6 +27,8 @@ The Lost & Found Management System is a web-based application built using Java S
 - Apache Tomcat 9 or 10
 - Oracle Database
 - `ojdbc11.jar` JDBC driver
+1. Download or clone the project.
+2. Build the project to generate the WAR file (if not already available).
 
 ---
 
